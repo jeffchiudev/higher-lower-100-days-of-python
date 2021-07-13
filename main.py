@@ -1,7 +1,15 @@
+from art import logo, vs
+from game_data import data
+import random
+
 #display art
+print(logo)
 
-# generate random accounts
-
+# generate random accounts from game data
+account_a = random.choice(data)
+account_b = random.choice(data)
+if account_a == account_b:
+  account_b = random.choice(data)
 # format account data into printable format
 
 # ask user to guess
