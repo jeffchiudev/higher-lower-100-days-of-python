@@ -23,11 +23,31 @@ def assign(list):
 
 def high_low(data):
   winning = True
-  while winning == True: 
-    A = assign(data)
-    print(A[0]['name'])
-    B = assign(data)
-    print(B[0]['name'])
-    winning = False
+  score = 0
+  print(logo)
+  A = assign(data)
+  B = assign(data)
+
+  print(f"Compare A: {A[0]['name']}, a {A[0]['description']}, from {A[0]['country']}.")
+
+  print(vs)
+
+  print(f"Compare B: {B[0]['name']}, a {B[0]['description']}, from {B[0]['country']}.") 
+
+  answer = input("Who has more followers? Type 'A' or 'B':")
+
+  if answer == 'A' and A[0]['follower_count'] > B[0]['follower_count']:
+    score += 1
+    print(f"You're right! Current score: {score}")
+  elif answer == 'B' and A[0]['follower_count'] < B[0]['follower_count']:
+    score += 1
+    print(f"You're right! Current score: {score}")
+  else:
+    print(f"Sorry, that's wrong. Final score: {score}")
+
+  # while winning == True: 
+  #   print(f"{A[0]['name']}, a {A[0]['description']}, from {A[0]['country']}")
+  #   print(f"{B[0]['name']}, a {B[0]['description']}, from {B[0]['country']}")
+  #   winning = False
 
 high_low(data)
