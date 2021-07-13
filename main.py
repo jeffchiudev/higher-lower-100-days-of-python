@@ -1,6 +1,7 @@
 from art import logo, vs
 from game_data import data
 import random
+import os
 
 # format account data into printable format
 def format_data(account):
@@ -49,6 +50,9 @@ while game_should_continue:
   b_follower_count = account_b["follower_count"]
   is_correct = check_answer(guess, a_follower_count, b_follower_count)
 
+# game clears the screen
+  os.system("clear")
+  print(logo)
   # give user feedback
   # Score keeping
   if is_correct:
@@ -62,5 +66,3 @@ while game_should_continue:
 
 
 
-
-# game clears the screen
