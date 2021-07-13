@@ -20,6 +20,7 @@ def check_answer(guess, a_followers, b_followers):
 
 #display art
 print(logo)
+score = 0
 
 # generate random accounts from game data
 account_a = random.choice(data)
@@ -35,17 +36,21 @@ print(f"Against B: {format_data(account_b)}.")
 guess = input("Who has more followers? Type 'A' or 'B': ").lower()
 
 # check if user is correct
-a_follower_count = account_a("follower_count")
-b_follower_count = account_b("Follower_count")
-
 ## get follower count of each account
-## Use if statement to check if correct
+a_follower_count = account_a["follower_count"]
+b_follower_count = account_b["follower_count"]
+is_correct = check_answer(guess, a_follower_count, b_follower_count)
 
 # give user feedback
-
 # Score keeping
+if is_correct:
+  score += 1
+  print(f"You're right! Current score: {score}.")
+else:
+  print(f"Sorry, that's wrong. Final score: {score}.")
 
-# make game repeatable.
+
+
 
 # make account at position B become next account at position A
 
